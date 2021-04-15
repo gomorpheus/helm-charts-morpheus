@@ -4,7 +4,7 @@
 
 **Configure Helm Repo**
 ```console
-helm repo add morpheusdata https://github.com/gomorpheus/helm-charts-morpheus/charts
+helm repo add morpheusdata https://gomorpheus.github.io/helm-charts-morpheus/
 ```
 \
 **Install Morpheus Worker**
