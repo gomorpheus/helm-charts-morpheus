@@ -1,11 +1,10 @@
 # Collection of helm charts
 
 - **Docker repo:** https://hub.docker.com/r/morpheusdata/morpheus-worker
-- **Source repo:** https://gitlab.com/bungebash/code-the-things/-/tree/master/charts
-- **Charts repo:** TBD
+- **Chart repo:** https://github.com/gomorpheus/helm-charts-morpheus/charts
 
 ```console
-helm repo add morpheusdata https://gitlab.com/bungebash/code-the-things/-/tree/master/charts
+helm repo add morpheusdata https://github.com/gomorpheus/helm-charts-morpheus/charts
 helm repo update
 helm search repo morpheusdata
 ```
