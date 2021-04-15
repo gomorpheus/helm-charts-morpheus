@@ -4,7 +4,7 @@
 
 **Configure Helm Repo**
 ```console
-helm repo add morpheusdata https://gitlab.com/bungebash/code-the-things/-/tree/master/charts
+helm repo add morpheusdata https://github.com/gomorpheus/helm-charts-morpheus/charts
 ```
 \
 **Install Morpheus Worker**
