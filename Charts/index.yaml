@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   morpheus-worker:
   - apiVersion: v2
-    appVersion: 5.3.1RC22
+    appVersion: 5.3.1RC23
     created: "2021-04-15T17:44:15.2648922-04:00"
     description: Deploy Morpheus Workers (https://www.morpheusdata.com)
     digest: 2932c457ff95f9715e4ffd1daf84f49b41936ce64e3dcdc37276f4bce15d037a
@@ -16,5 +16,5 @@ entries:
     name: morpheus-worker
     urls:
     - https://gomorpheus.github.io/helm-charts-morpheus/morpheus-worker/morpheus-worker-0.2.0.tgz
-    version: 0.3.0
+    version: 0.3.1
 generated: "2021-04-15T17:44:15.2638912-04:00"
