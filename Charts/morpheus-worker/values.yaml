@@ -13,7 +13,7 @@ env:
 
 image:
   repository: morpheusdata/morpheus-worker
-  tag: 5.3.1RC21
+  tag: 5.3.1RC22
   pullPolicy: IfNotPresent
 
 nameOverride: ""
