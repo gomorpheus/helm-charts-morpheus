@@ -13,7 +13,7 @@ env:
 
 image:
   repository: morpheusdata/morpheus-worker
-  tag: 5.3.1RC23
+  tag: 5.3.1
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -62,7 +62,7 @@ autoscaling:
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 

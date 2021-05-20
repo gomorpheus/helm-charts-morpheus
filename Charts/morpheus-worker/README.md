@@ -48,7 +48,7 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | Parameter                                   | Description                                                                                  | Default                                        |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `image.repository`                            | Image repository                                  | `morpheusdata/morpheus-worker`|
-| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.3.1RC23`|
+| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.3.1`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
 | `env.MORPHEUS_KEY`                            | API Key for Morpheus Worker                       |                           |
 | `env.MORPHEUS_URL`                            | Morpheus FQDN with protocol                       |                           |
