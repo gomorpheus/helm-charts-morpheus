@@ -1,7 +1,7 @@
 apiVersion: v2
 name: morpheus-worker
 description: Deploy Morpheus Workers (https://www.morpheusdata.com)
-version: 1.0.0
+version: 1.0.4
 appVersion: 5.3.1
 kubeVersion: ">=1.16.0-0"
 icon: https://morpheusdata.com/wp-content/uploads/2020/04/morpheus-logo-v2.svg
