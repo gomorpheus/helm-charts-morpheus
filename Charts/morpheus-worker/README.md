@@ -64,7 +64,7 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `autoscaling.minReplicas`                     | Minimum number of Replicas                        | `1`                       |
 | `autoscaling.maxReplicas`                     | Maximum number of Replicas                        | `100`                     |
 | `autoscaling.targetCPUUtilizationPercentage`  | CPU Threshold for AutoScaling                     | `80`                      |
-| `autoscaling.targetMemoryUtilizationPercentage`| Memory Threshold for AutoScaling                 |                           |
+| `autoscaling.targetMemoryUtilizationPercentage`| Memory Threshold for AutoScaling                 | `80`                      |
 | `ingress.enabled`                             | Enables Ingress                                   | `false`                   |
 | `ingress.annotations`                         | Ingress annotations                               | `{}`                      |
 | `ingress.path`                                | Ingress path                                      | `/`                       |

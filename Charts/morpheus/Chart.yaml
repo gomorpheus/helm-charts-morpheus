@@ -1,6 +1,6 @@
 apiVersion: v2
 name: morpheus
-description: Morpheus Data CMP Helm Chart
+description: Morpheus Data CMP
 type: application
 version: 0.1.0
 appVersion: 5.3.1
