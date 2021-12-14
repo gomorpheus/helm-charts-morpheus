@@ -3,9 +3,9 @@ entries:
   morpheus-worker:
   - apiVersion: v2
     appVersion: 5.4.1
-    created: "2021-12-14T15:36:34.990820569-05:00"
+    created: "2021-12-14T15:45:32.904755329-05:00"
     description: Deploy Morpheus Workers (https://www.morpheusdata.com)
-    digest: de0f14a6dd6255bf3d6f0f8884a971496b4cdb7cf1a8b6c00ec7d28ca7a5f7ac
+    digest: 5bd802ca40945aa04c1837955ac39530b4be400b3235636ea7a445ccbbc0245f
     icon: https://morpheusdata.com/wp-content/uploads/2020/04/morpheus-logo-v2.svg
     keywords:
     - morpheus
@@ -18,4 +18,4 @@ entries:
     urls:
     - https://github.com/gomorpheus/helm-charts-morpheus/morpheus-worker-1.2.0.tgz
     version: 1.2.0
-generated: "2021-12-14T15:36:34.989520522-05:00"
+generated: "2021-12-14T15:45:32.903442428-05:00"
