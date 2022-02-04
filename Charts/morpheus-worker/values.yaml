@@ -7,13 +7,14 @@ replicaCount: 1
 namespace: default
 
 env:
-  MORPHEUS_KEY: "your-token-id"
-  MORPHEUS_URL: "https://url.com"
+  MORPHEUS_KEY: ""
+  MORPHEUS_WORKER_KEY: ""
+  MORPHEUS_URL: ""
   MORPHEUS_SELF_SIGNED: "false"
 
 image:
   repository: morpheusdata/morpheus-worker
-  tag: 5.4.1
+  tag: 5.4.3
   pullPolicy: IfNotPresent
 
 nameOverride: ""
