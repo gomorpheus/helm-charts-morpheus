@@ -51,8 +51,8 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `image.repository`                            | Image repository                                  | `morpheusdata/morpheus-worker`|
 | `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.4.3`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
-| `env.MORPHEUS_KEY`                            | API Key for Morpheus VDI Gateway                       |                           |
-| `env.MORPHEUS_WORKER_KEY`                     | API Key for Morpheus Distributed Worker                                |                           |
+| `env.MORPHEUS_KEY`                            | API Key for Morpheus VDI Gateway                                      |  `<Optional>`             |
+| `env.MORPHEUS_WORKER_KEY`                     | API Key for Morpheus Distributed Worker                                |  `<Optional>`             |
 | `env.MORPHEUS_URL`                            | Morpheus FQDN with protocol                       |                           |
 | `env.MORPHEUS_SELF_SIGNED`                    | Is Morpheus using a Self Signed Certificate       | `false`                   |
 | `service.type`                                | Kubernetes service type for the GUI               | `ClusterIP`               |
