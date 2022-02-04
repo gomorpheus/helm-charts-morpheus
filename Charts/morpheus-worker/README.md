@@ -1,4 +1,5 @@
 # Morpheus Worker
+The Morpheus Worker can serve as a VDI Gateway <and/or> a Distributed Worker.  Input the required tokens, and update the pointers within the Morpheus UI to be utilized as desired.
 
 ## Deploying Morpheus Worker Nodes ##
 
