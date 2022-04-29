@@ -4,8 +4,6 @@
 
 replicaCount: 1
 
-namespace: default
-
 env:
   MORPHEUS_KEY: ""
   MORPHEUS_WORKER_KEY: ""
