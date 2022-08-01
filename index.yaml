@@ -72,6 +72,6 @@ generated: "2022-02-04T14:51:50.777259474-05:00"
     kubeVersion: '>=1.20.0-0'
     name: redoc
     urls:
-    - https://github.com/gomorpheus/helm-charts-morpheus/redoc-1.0.0.tgz
+    - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/redoc-1.0.0/redoc-1.0.0.tgz
     version: 1.0.0
 generated: "2022-08-01T14:20:11.239638326-04:00"
