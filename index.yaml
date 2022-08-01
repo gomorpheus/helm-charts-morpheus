@@ -55,3 +55,23 @@ entries:
     - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/morpheus-worker-1.2.0/morpheus-worker-1.2.0.tgz
     version: 1.2.0
 generated: "2022-02-04T14:51:50.777259474-05:00"
+  redoc:
+  - apiVersion: v2
+    appVersion: 2.0.0-rc.74
+    created: "2022-08-01T14:20:11.241403559-04:00"
+    description: Deploy Redoc contain as Helm (https://github.com/Redocly/redoc)
+    digest: aae0eb18f23b56c0155967e19ea2e5366240a773cc47f325d1e054f8b0344391
+    icon: https://raw.githubusercontent.com/Redocly/redoc/master/docs/images/redoc.png
+    keywords:
+    - redoc
+    - openapi
+    - swagger
+    - swaggerhub
+    - redocly
+    - api
+    kubeVersion: '>=1.20.0-0'
+    name: redoc
+    urls:
+    - https://github.com/gomorpheus/helm-charts-morpheus/redoc-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-08-01T14:20:11.239638326-04:00"
