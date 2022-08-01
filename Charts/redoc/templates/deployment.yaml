@@ -40,7 +40,7 @@ spec:
           - name: SPEC_URL
             value: {{ .Values.env.SPEC_URL | quote }}
           - name: PORT
-            value: {{ .Values.env.PORT }}
+            value: {{ .Values.env.PORT | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
