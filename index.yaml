@@ -54,7 +54,6 @@ entries:
     urls:
     - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/morpheus-worker-1.2.0/morpheus-worker-1.2.0.tgz
     version: 1.2.0
-generated: "2022-02-04T14:51:50.777259474-05:00"
   redoc:
   - apiVersion: v2
     appVersion: 2.0.0-rc.74
