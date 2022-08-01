@@ -40,15 +40,7 @@ spec:
           - name: SPEC_URL
             value: {{ .Values.env.SPEC_URL | quote }}
           - name: PORT
-            value: {{ .Values.env.PORT | quote }}
-          # livenessProbe:
-          #   httpGet:
-          #     path: /ping
-          #     port: {{ .Values.service.ports.port }}
-          #   initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-          #   timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-          #   periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-          #   failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+            value: {{ .Values.env.PORT }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
