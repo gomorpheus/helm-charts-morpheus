@@ -58,4 +58,11 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+      volumes:
+        - name: swagger-config
+          configMap:
+            name: {{ template "redoc.fullname" . }}
+            items:
+            - key: conf.json
+              path: swagger.json
       {{- end }}
