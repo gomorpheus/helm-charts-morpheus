@@ -8,7 +8,7 @@ env:
   PAGE_TITLE: ""
   PAGE_FAVICON: ""
   SPEC_URL: ""
-  PORT: "80"
+  PORT: 80
 
 image:
   repository: redocly/redoc
@@ -24,6 +24,7 @@ service:
   type: NodePort
   ports: 
     port: 38080
+    targetPort: 80
 
 # livenessProbe:
 #   initialDelaySeconds: 5
@@ -36,10 +37,11 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/forwarded-for-header: "X-Forwarded-For"
-    nginx.ingress.kubernetes.io/x-forwarded-proto: "https"
-    nginx.ingress.kubernetes.io/affinity: "cookie"
-    nginx.ingress.kubernetes.io/affinity-mode: "persistent"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+       more_set_headers "Access-Control-Allow-Origin: $http_origin";
   hosts:
     - host: chart-example.local
   path: /

@@ -1,6 +1,6 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "redoc.fullname" . -}}
-{{- $svcPort := .Values.env.PORT -}}
+{{- $svcPort := .Values.service.ports.targetPort -}}
 {{- if semverCompare ">=1.20-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1
 {{- else -}}

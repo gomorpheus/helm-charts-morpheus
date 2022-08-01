@@ -12,6 +12,6 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.ports.port }}
-      targetPort: {{ .Values.env.PORT }}
+      targetPort: {{ .Values.service.ports.targetPort }}
   selector:
     {{- include "redoc.selectorLabels" . | nindent 4 }}
