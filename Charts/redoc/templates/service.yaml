@@ -12,10 +12,6 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.ports.port }}
-<<<<<<< HEAD
       targetPort: {{ .Values.redoc.PORT }}
-=======
-      targetPort: {{ .Values.env.PORT }}
->>>>>>> 489603266d2ab74629a99aa75c31c46d2b333e10
   selector:
     {{- include "redoc.selectorLabels" . | nindent 4 }}
