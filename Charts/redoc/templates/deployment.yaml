@@ -32,15 +32,21 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.redoc.PATH }}
+          env:
+            - name: SPEC_URL
+              value: {{ .Values.redoc.PATH }}
+          {{ else }}
+          env:
+          - name: SPEC_URL
+            value: {{ .Values.redoc.SPEC_URL | quote }}
           env:
           - name: PAGE_TITLE
-            value: {{ .Values.env.PAGE_TITLE | quote }}
+            value: {{ .Values.redoc.PAGE_TITLE | quote }}
           - name: PAGE_FAVICON
-            value: {{ .Values.env.PAGE_FAVICON | quote }}
-          - name: SPEC_URL
-            value: {{ .Values.env.SPEC_URL | quote }}
+            value: {{ .Values.redoc.PAGE_FAVICON | quote }}
           - name: PORT
-            value: {{ .Values.env.PORT | quote }}
+            value: {{ .Values.redoc.PORT | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

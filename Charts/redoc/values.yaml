@@ -4,7 +4,8 @@
 
 replicaCount: 1
 
-env:
+redoc:
+  PATH: ""
   PAGE_TITLE: ""
   PAGE_FAVICON: ""
   SPEC_URL: ""
@@ -23,8 +24,7 @@ podAnnotations: {}
 service:
   type: NodePort
   ports: 
-    port: 38080
-    targetPort: 80
+    port: 30080
 
 ingress:
   enabled: false
