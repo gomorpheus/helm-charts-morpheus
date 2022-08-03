@@ -32,16 +32,9 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          {{- if .Values.redoc.PATH }}
-          env:
-            - name: SPEC_URL
-              value: {{ .Values.redoc.PATH | quote }}
-          {{ else }}
           env:
           - name: SPEC_URL
             value: {{ .Values.redoc.SPEC_URL | quote }}
-          {{- end }}
-          env:
           - name: PAGE_TITLE
             value: {{ .Values.redoc.PAGE_TITLE | quote }}
           - name: PAGE_FAVICON
