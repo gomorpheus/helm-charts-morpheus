@@ -40,6 +40,7 @@ spec:
           env:
           - name: SPEC_URL
             value: {{ .Values.redoc.SPEC_URL | quote }}
+          {{- end }}
           env:
           - name: PAGE_TITLE
             value: {{ .Values.redoc.PAGE_TITLE | quote }}
