@@ -32,10 +32,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          volumeMounts:
-            - mountPath: /usr/share/nginx/html/swagger.json
-              subPath: swagger.json
-              name: swagger-config
           env:
           - name: PAGE_TITLE
             value: {{ .Values.env.PAGE_TITLE | quote }}
@@ -58,11 +54,4 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-      volumes:
-        - name: swagger-config
-          configMap:
-            name: {{ template "redoc.fullname" . }}
-            items:
-            - key: conf.json
-              path: swagger.json
       {{- end }}

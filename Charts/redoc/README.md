@@ -1,43 +1,45 @@
-# Morpheus Worker
-The Morpheus Worker can serve as a VDI Gateway <and/or> a Distributed Worker.  Input the required tokens, and update the pointers within the Morpheus UI to be utilized as desired.
+# Redoc
+Redoc is an open-source tool for generating documentation from OpenAPI (fka Swagger) definitions.
 
-## Deploying Morpheus Worker Nodes ##
+This deploys the Redoc container found here: https://hub.docker.com/r/redocly/redoc/
+
+## Deploying Redoc ##
 
 **Configure Helm Repo**
 ```console
 helm repo add morpheusdata https://gomorpheus.github.io/helm-charts-morpheus/
 ```
 \
-**Install Morpheus Worker**
+**Install Redoc**
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-helm install morpheus-worker --set replicaCount="1" morpheusdata/morpheus-worker
+helm install redoc --set replicaCount="1" morpheusdata/redoc
 ```
 Or supply a values YAML file and pass as an agrgument as follows:
 ```console
-helm install -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+helm install -f values.yaml redoc morpheusdata/redoc
 ```
 
 ---
-## Upgrading Morpheus Worker Nodes ##
+## Upgrading Redoc ##
 
-There are no persistent items associated with Worker Nodes at this time.  Upgrading is simpling refreshing the repo and performing the following:
+There are no persistent items associated at this time.  Upgrading is simpling refreshing the repo and performing the following:
 
 ```console
 helm repo update
-helm upgrade -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+helm upgrade -f values.yaml redoc morpheusdata/redoc
 ```
 
-## Uninstalling Morpheus Worker Chart
+## Uninstalling Redoc Chart
 
 To uninstall/delete deployment:
 ```console
-helm uninstall morpheus-worker
+helm uninstall redoc
 ```
 or
 ```console
-helm delete morpheus-worker --purge
+helm delete redoc --purge
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -48,19 +50,15 @@ The following tables lists the configurable parameters of the Sentry chart and t
 
 | Parameter                                   | Description                                                                                  | Default                                        |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `image.repository`                            | Image repository                                  | `morpheusdata/morpheus-worker`|
-| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.4.3`|
+| `image.repository`                            | Image repository                                  | `morpheusdata/redoc`|
+| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/redocly/redoc/tags). | `v2.0.0-rc.74`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
-| `env.MORPHEUS_KEY`                            | API Key for Morpheus VDI Gateway                                      |  `<Optional>`             |
-| `env.MORPHEUS_WORKER_KEY`                     | API Key for Morpheus Distributed Worker                                |  `<Optional>`             |
-| `env.MORPHEUS_URL`                            | Morpheus FQDN with protocol                       |                           |
-| `env.MORPHEUS_SELF_SIGNED`                    | Is Morpheus using a Self Signed Certificate       | `false`                   |
+| `env.PAGE_TITLE`                              | Page Title                                        |  `<Optional>`             |
+| `env.PAGE_FAVICON`                            | URL to page favicon                               |  `<Optional>`             |
+| `env.SPEC_URL`                                | URL to spec                                       | `http://petstore.swagger.io/v2/swagger.json` |
+| `env.PORT`                                    | nginx port                                        | `false`                   |
 | `service.type`                                | Kubernetes service type for the GUI               | `ClusterIP`               |
 | `service.port`                                | Kubernetes port where the GUI is exposed          | `8989`                    |
-| `livenessProbe.initialDelaySeconds`           | Initial delay (seconds) for liveness monitoring   | `5`                       |
-| `livenessProbe.timeoutSeconds`                | Timeout (seconds) before health check considered unhealthy | `5`              |
-| `livenessProbe.periodSeconds`                 | Poll interval (seconds) between health checks     | `10`                      |
-| `livenessProbe.failureThreshold`              | Number of failed polls before restarting service  | `3`                       |
 | `replicaCount`                                | Number of Replicas if AutoScaling False           | `1`                       |
 | `autoscaling.enabled`                         | Enable AutoScaling                                | `false`                   |
 | `autoscaling.minReplicas`                     | Minimum number of Replicas                        | `1`                       |
