@@ -25,7 +25,7 @@ podAnnotations: {}
 service:
   type: NodePort
   ports: 
-    port: 30080
+    port: 80
 
 ingress:
   enabled: false
