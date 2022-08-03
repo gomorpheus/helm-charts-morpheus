@@ -53,10 +53,10 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `image.repository`                            | Image repository                                  | `morpheusdata/redoc`|
 | `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/redocly/redoc/tags). | `v2.0.0-rc.74`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
-| `env.PAGE_TITLE`                              | Page Title                                        |  `<Optional>`             |
-| `env.PAGE_FAVICON`                            | URL to page favicon                               |  `<Optional>`             |
-| `env.SPEC_URL`                                | URL to spec                                       | `http://petstore.swagger.io/v2/swagger.json` |
-| `env.PORT`                                    | nginx port                                        | `false`                   |
+| `redoc.PAGE_TITLE`                            | Page Title                                        |  `<Optional>`             |
+| `redoc.PAGE_FAVICON`                          | URL to page favicon                               |  `<Optional>`             |
+| `redoc.SPEC_URL`                              | URL to spec                                       | `https://petstore.swagger.io/v2/swagger.json` |
+| `redoc.PORT`                                  | nginx port                                        | `false`                   |
 | `service.type`                                | Kubernetes service type for the GUI               | `ClusterIP`               |
 | `service.port`                                | Kubernetes port where the GUI is exposed          | `8989`                    |
 | `replicaCount`                                | Number of Replicas if AutoScaling False           | `1`                       |
