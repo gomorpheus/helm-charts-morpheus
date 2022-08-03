@@ -35,7 +35,7 @@ spec:
           {{- if .Values.redoc.PATH }}
           env:
             - name: SPEC_URL
-              value: {{ .Values.redoc.PATH }}
+              value: {{ .Values.redoc.PATH | quote }}
           {{ else }}
           env:
           - name: SPEC_URL
