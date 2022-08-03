@@ -10,6 +10,7 @@ redoc:
   PAGE_FAVICON: ""
   SPEC_URL: ""
   PORT: 80
+  OPTIONS: ""
 
 image:
   repository: redocly/redoc
@@ -34,6 +35,8 @@ ingress:
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+       more_set_headers "Access-Control-Allow-Origin: $http_origin";
   hosts:
     - host: chart-example.local
   path: /

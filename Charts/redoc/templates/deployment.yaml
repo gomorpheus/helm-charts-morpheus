@@ -41,6 +41,8 @@ spec:
             value: {{ .Values.redoc.PAGE_FAVICON | quote }}
           - name: PORT
             value: {{ .Values.redoc.PORT | quote }}
+          - name: REDOC_OPTIONS
+            value: {{ .Values.redoc.OPTIONS | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
