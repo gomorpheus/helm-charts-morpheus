@@ -16,7 +16,7 @@ spec:
       targetPort: {{ .Values.service.ports.targetPort }}
       {{- if .Values.service.ports.nodePort}}
       nodePort: {{ .Values.service.ports.nodePort }}
-      {{-end}}
+      {{- end}}
   {{- end}}
   {{- if eq .Values.service.type "LoadBalancer"}}
   clusterIP: {{ .Values.service.clusterIP }}
