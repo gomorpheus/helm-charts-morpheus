@@ -28,7 +28,7 @@ spec:
   {{- if eq .Values.service.type "ClusterIP"}}
   {{- if .Values.service.clusterIP}}
   clusterIP: {{ .Values.service.clusterIP }}
-  {{-end}}
+  {{- end}}
   ports:
     - protocol: {{ .Values.service.ports.protocol }}
       port: {{ .Values.service.ports.port }}
