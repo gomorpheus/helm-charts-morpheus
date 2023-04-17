@@ -3,7 +3,7 @@ name: redoc
 description: Deploy Redoc contain as Helm (https://github.com/Redocly/redoc)
 version: 1.0.0
 appVersion: 2.0.0-rc.74
-kubeVersion: ">=1.20.0-0"
+kubeVersion: ">=1.16.0-0"
 icon: https://raw.githubusercontent.com/Redocly/redoc/master/docs/images/redoc.png
 keywords:
   - redoc
@@ -12,3 +12,10 @@ keywords:
   - swaggerhub
   - redocly
   - api
+maintainers:
+  - name: BungeBash
+    email: Chris@CodetheThings.com
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.5.2

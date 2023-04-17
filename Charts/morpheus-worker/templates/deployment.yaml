@@ -35,6 +35,8 @@ spec:
           env:
           - name: MORPHEUS_KEY
             value: {{ .Values.env.MORPHEUS_KEY | quote }}
+          - name: MORPHEUS_WORKER_KEY
+            value: {{ .Values.env.MORPHEUS_WORKER_KEY | quote }}
           - name: MORPHEUS_URL
             value: {{ .Values.env.MORPHEUS_URL | quote }}
           - name: MORPHEUS_SELF_SIGNED
