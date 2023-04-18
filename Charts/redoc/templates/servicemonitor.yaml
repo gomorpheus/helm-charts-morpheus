@@ -1,5 +1,5 @@
 {{- if .Values.metrics.enabled }}
-{{- include "common.Values.setup" . -}}
+{{- include "common.values.setup" . -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor

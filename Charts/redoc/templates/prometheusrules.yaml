@@ -1,5 +1,5 @@
 {{- if and .Values.metrics.enabled .Values.metrics.prometheusRule.enabled }}
-{{- include "common.Values.setup" . -}}
+{{- include "common.values.setup" . -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
