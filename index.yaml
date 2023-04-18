@@ -3,6 +3,24 @@ entries:
   morpheus-worker:
   - apiVersion: v2
     appVersion: 5.4.3
+    created: "2023-04-18T08:29:52.651715569-04:00"
+    description: Deploy Morpheus VDI and Distributed Workers (https://www.morpheusdata.com)
+    digest: 38e4eb5681e23f613d75e4b1977d61eb5d1586fc553c19e64e60664ad1e6476a
+    icon: https://morpheusdata.com/wp-content/uploads/2020/04/morpheus-logo-v2.svg
+    keywords:
+    - morpheus
+    - worker
+    - gateway
+    - cmp
+    - vdi
+    - distributed
+    kubeVersion: '>=1.16.0-0'
+    name: morpheus-worker
+    urls:
+    - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/morpheus-worker-1.4.0/morpheus-worker-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: 5.4.3
     created: "2022-04-29T10:14:58.358441965-04:00"
     description: Deploy Morpheus VDI and Distributed Workers (https://www.morpheusdata.com)
     digest: e6f9a65e8e4efb4bb35ba0e416766dba4a6a7a55698f524f4a5e41de82d9a257
@@ -55,6 +73,35 @@ entries:
     - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/morpheus-worker-1.2.0/morpheus-worker-1.2.0.tgz
     version: 1.2.0
   redoc:
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 2.0.0-rc.74
+    created: "2023-04-18T08:29:52.664182883-04:00"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: Deploy Redoc contain as Helm (https://github.com/Redocly/redoc)
+    digest: 515c55aa833a36c6a4c3b255a2d14a954ea26def7fc61b4b9e759e43f3032b85
+    icon: https://raw.githubusercontent.com/Redocly/redoc/master/docs/images/redoc.png
+    keywords:
+    - redoc
+    - openapi
+    - swagger
+    - swaggerhub
+    - redocly
+    - api
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: Chris@CodetheThings.com
+      name: BungeBash
+    name: redoc
+    urls:
+    - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/redoc-1.2.0/redoc-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v2
     appVersion: 2.0.0-rc.74
     created: "2022-08-01T14:20:11.241403559-04:00"
@@ -73,4 +120,4 @@ entries:
     urls:
     - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/redoc-1.0.0/redoc-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-01T14:20:11.239638326-04:00"
+generated: "2023-04-18T08:29:52.648852889-04:00"
