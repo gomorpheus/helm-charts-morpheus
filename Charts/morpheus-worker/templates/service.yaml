@@ -9,30 +9,30 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  type: {{ .values.service.type }}
-  {{- if eq .values.service.type "NodePort" }}
+  type: {{ .Values.service.type }}
+  {{- if eq .Values.service.type "NodePort" }}
   ports:
-    - port: {{ .values.service.ports.port }}
-      targetPort: {{ .values.service.ports.targetPort }}
-      {{- if .values.service.ports.nodePort}}
-      nodePort: {{ .values.service.ports.nodePort }}
+    - port: {{ .Values.service.ports.port }}
+      targetPort: {{ .Values.service.ports.targetPort }}
+      {{- if .Values.service.ports.nodePort}}
+      nodePort: {{ .Values.service.ports.nodePort }}
       {{- end}}
   {{- end}}
-  {{- if eq .values.service.type "LoadBalancer"}}
-  clusterIP: {{ .values.service.clusterIP }}
+  {{- if eq .Values.service.type "LoadBalancer"}}
+  clusterIP: {{ .Values.service.clusterIP }}
   ports:
-    - protocol: {{ .values.service.ports.protocol }}
-      port: {{ .values.service.ports.port }}
-      targetPort: {{ .values.service.ports.targetPort }}
+    - protocol: {{ .Values.service.ports.protocol }}
+      port: {{ .Values.service.ports.port }}
+      targetPort: {{ .Values.service.ports.targetPort }}
   {{- end}}
-  {{- if eq .values.service.type "ClusterIP"}}
-  {{- if .values.service.clusterIP}}
-  clusterIP: {{ .values.service.clusterIP }}
+  {{- if eq .Values.service.type "ClusterIP"}}
+  {{- if .Values.service.clusterIP}}
+  clusterIP: {{ .Values.service.clusterIP }}
   {{- end}}
   ports:
-    - protocol: {{ .values.service.ports.protocol }}
-      port: {{ .values.service.ports.port }}
-      targetPort: {{ .values.service.ports.targetPort }}
+    - protocol: {{ .Values.service.ports.protocol }}
+      port: {{ .Values.service.ports.port }}
+      targetPort: {{ .Values.service.ports.targetPort }}
   {{- end}}
   selector:
     {{- include "morpheus-worker.selectorLabels" . | nindent 4 }}

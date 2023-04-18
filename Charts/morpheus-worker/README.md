@@ -14,9 +14,9 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install morpheus-worker --set replicaCount="1" morpheusdata/morpheus-worker
 ```
-Or supply a values YAML file and pass as an agrgument as follows:
+Or supply a Values YAML file and pass as an agrgument as follows:
 ```console
-helm install -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+helm install -f Values.yaml morpheus-worker morpheusdata/morpheus-worker
 ```
 
 ---
@@ -26,7 +26,7 @@ There are no persistent items associated with Worker Nodes at this time.  Upgrad
 
 ```console
 helm repo update
-helm upgrade -f values.yaml morpheus-worker morpheusdata/morpheus-worker
+helm upgrade -f Values.yaml morpheus-worker morpheusdata/morpheus-worker
 ```
 
 ## Uninstalling Morpheus Worker Chart
@@ -44,12 +44,12 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following tables lists the configurable parameters of the Sentry chart and their default values.
+The following tables lists the configurable parameters of the Sentry chart and their default Values.
 
 | Parameter                                   | Description                                                                                  | Default                                        |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `image.repository`                            | Image repository                                  | `morpheusdata/morpheus-worker`|
-| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.4.3`|
+| `image.tag`                                   | Image tag. Possible Values listed [here](https://hub.docker.com/r/morpheusdata/morpheus-worker/tags). | `5.4.3`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
 | `env.MORPHEUS_KEY`                            | API Key for Morpheus VDI Gateway                                      |  `<Optional>`             |
 | `env.MORPHEUS_WORKER_KEY`                     | API Key for Morpheus Distributed Worker                                |  `<Optional>`             |

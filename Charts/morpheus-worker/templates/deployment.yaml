@@ -9,57 +9,57 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  {{- if not .values.autoscaling.enabled }}
-  replicas: {{ .values.replicaCount }}
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
       {{- include "morpheus-worker.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .values.podAnnotations }}
+      {{- with .Values.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
         {{- include "morpheus-worker.selectorLabels" . | nindent 8 }}
     spec:
-      {{- with .values.imagePullSecrets }}
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .values.image.repository }}:{{ .values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .values.image.pullPolicy }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: MORPHEUS_KEY
-            value: {{ .values.env.MORPHEUS_KEY | quote }}
+            value: {{ .Values.env.MORPHEUS_KEY | quote }}
           - name: MORPHEUS_WORKER_KEY
-            value: {{ .values.env.MORPHEUS_WORKER_KEY | quote }}
+            value: {{ .Values.env.MORPHEUS_WORKER_KEY | quote }}
           - name: MORPHEUS_URL
-            value: {{ .values.env.MORPHEUS_URL | quote }}
+            value: {{ .Values.env.MORPHEUS_URL | quote }}
           - name: MORPHEUS_SELF_SIGNED
-            value: {{ .values.env.MORPHEUS_SELF_SIGNED | quote }}
+            value: {{ .Values.env.MORPHEUS_SELF_SIGNED | quote }}
           livenessProbe:
             httpGet:
               path: /ping
-              port: {{ .values.service.ports.port }}
-            initialDelaySeconds: {{ .values.livenessProbe.initialDelaySeconds }}
-            timeoutSeconds: {{ .values.livenessProbe.timeoutSeconds }}
-            periodSeconds: {{ .values.livenessProbe.periodSeconds }}
-            failureThreshold: {{ .values.livenessProbe.failureThreshold }}
+              port: {{ .Values.service.ports.port }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
           resources:
-            {{- toYaml .values.resources | nindent 12 }}
-      {{- with .values.nodeSelector }}
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .values.affinity }}
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .values.tolerations }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
