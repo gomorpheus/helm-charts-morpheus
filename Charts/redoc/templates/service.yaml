@@ -9,9 +9,9 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .values.service.type }}
   ports:
-    - port: {{ .Values.service.ports.port }}
-      targetPort: {{ .Values.redoc.PORT }}
+    - port: {{ .values.service.ports.port }}
+      targetPort: {{ .values.redoc.PORT }}
   selector:
     {{- include "redoc.selectorLabels" . | nindent 4 }}

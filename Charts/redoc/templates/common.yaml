@@ -2,13 +2,13 @@
 {{- include "common.values.setup" . }}
 
 {{/* Append the hardcoded settings */}}
-{{- define "redoc.harcodedValues" -}}
-{{ if .Values.metrics.enabled }}
+{{- define "redoc.harcodedvalues" -}}
+{{ if .values.metrics.enabled }}
 additionalContainers:
   exporter:
     name: exporter
-    image: "{{ .Values.metrics.exporter.image.repository }}:{{ .Values.metrics.exporter.image.tag }}"
-    imagePullPolicy: {{ .Values.metrics.exporter.image.pullPolicy }}
+    image: "{{ .values.metrics.exporter.image.repository }}:{{ .values.metrics.exporter.image.tag }}"
+    imagePullPolicy: {{ .values.metrics.exporter.image.pullPolicy }}
     args: ["redoc"]
     env:
       - name: URL
@@ -16,21 +16,21 @@ additionalContainers:
       - name: CONFIG
         value: "/config/config.xml"
       - name: PORT
-        value: "{{ .Values.metrics.exporter.env.port }}"
+        value: "{{ .values.metrics.exporter.env.port }}"
       - name: ENABLE_ADDITIONAL_METRICS
-        value: "{{ .Values.metrics.exporter.env.additionalMetrics }}"
+        value: "{{ .values.metrics.exporter.env.additionalMetrics }}"
       - name: ENABLE_UNKNOWN_QUEUE_ITEMS
-        value: "{{ .Values.metrics.exporter.env.unknownQueueItems }}"
+        value: "{{ .values.metrics.exporter.env.unknownQueueItems }}"
     ports:
       - name: metrics
-        containerPort: {{ .Values.metrics.exporter.env.port }}
+        containerPort: {{ .values.metrics.exporter.env.port }}
     volumeMounts:
-      {{ if .Values.persistence.config.enabled }}
+      {{ if .values.persistence.config.enabled }}
       - name: config
         mountPath: /config
         readOnly: true
-        {{ if .Values.persistence.config.subPath }}
-        subPath: {{ .Values.persistence.config.subPath }}
+        {{ if .values.persistence.config.subPath }}
+        subPath: {{ .values.persistence.config.subPath }}
         {{ end }}
       {{ end }}
 
@@ -41,10 +41,10 @@ service:
       metrics:
         enabled: true
         protocol: TCP
-        port: {{ .Values.metrics.exporter.env.port }}
+        port: {{ .values.metrics.exporter.env.port }}
 {{ end }}
 {{- end -}}
-{{- $_ := mergeOverwrite .Values (include "redoc.harcodedValues" . | fromYaml) -}}
+{{- $_ := mergeOverwrite .values (include "redoc.harcodedvalues" . | fromYaml) -}}
 
 {{/* Render the templates */}}
 {{ include "common.all" . }}

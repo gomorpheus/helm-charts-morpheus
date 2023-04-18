@@ -1,4 +1,4 @@
-{{- if and .Values.metrics.enabled .Values.metrics.prometheusRule.enabled }}
+{{- if and .values.metrics.enabled .values.metrics.prometheusRule.enabled }}
 {{- include "common.values.setup" . -}}
 ---
 apiVersion: monitoring.coreos.com/v1
@@ -7,7 +7,7 @@ metadata:
   name: {{ include "common.names.fullname" . }}
   labels:
     {{- include "common.labels" . | nindent 4 }}
-    {{- with .Values.metrics.prometheusRule.labels }}
+    {{- with .values.metrics.prometheusRule.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
@@ -33,7 +33,7 @@ spec:
           for: 5m
           labels:
             severity: critical
-        {{- with .Values.metrics.prometheusRule.rules }}
+        {{- with .values.metrics.prometheusRule.rules }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
 {{- end }}

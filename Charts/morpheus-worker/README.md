@@ -55,7 +55,7 @@ The following tables lists the configurable parameters of the Sentry chart and t
 | `env.MORPHEUS_WORKER_KEY`                     | API Key for Morpheus Distributed Worker                                |  `<Optional>`             |
 | `env.MORPHEUS_URL`                            | Morpheus FQDN with protocol                       |                           |
 | `env.MORPHEUS_SELF_SIGNED`                    | Is Morpheus using a Self Signed Certificate       | `false`                   |
-| `service.type`                                | Kubernetes service type for the GUI               | `ClusterIP`               |
+| `service.type`                                | Kubernetes service type for the GUI               | `NodePort`               |
 | `service.port`                                | Kubernetes port where the GUI is exposed          | `8989`                    |
 | `livenessProbe.initialDelaySeconds`           | Initial delay (seconds) for liveness monitoring   | `5`                       |
 | `livenessProbe.timeoutSeconds`                | Timeout (seconds) before health check considered unhealthy | `5`              |
