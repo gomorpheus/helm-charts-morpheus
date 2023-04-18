@@ -1,5 +1,5 @@
-{{- if .values.metrics.enabled }}
-{{- include "common.values.setup" . -}}
+{{- if .Values.metrics.enabled }}
+{{- include "common.Values.setup" . -}}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -7,7 +7,7 @@ metadata:
   name: {{ include "common.names.fullname" . }}
   labels:
     {{- include "common.labels" . | nindent 4 }}
-    {{- with .values.metrics.serviceMonitor.labels }}
+    {{- with .Values.metrics.serviceMonitor.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
@@ -16,10 +16,10 @@ spec:
       {{- include "common.labels.selectorLabels" . | nindent 6 }}
   endpoints:
     - port: metrics
-      {{- with .values.metrics.serviceMonitor.interval }}
+      {{- with .Values.metrics.serviceMonitor.interval }}
       interval: {{ . }}
       {{- end }}
-      {{- with .values.metrics.serviceMonitor.scrapeTimeout }}
+      {{- with .Values.metrics.serviceMonitor.scrapeTimeout }}
       scrapeTimeout: {{ . }}
       {{- end }}
       path: /metrics
