@@ -1,5 +1,5 @@
 {{/* Make sure all variables are set properly */}}
-{{- include "common.Values.setup" . }}
+{{- include "common.values.setup" . }}
 
 {{/* Append the hardcoded settings */}}
 {{- define "redoc.harcodedValues" -}}
