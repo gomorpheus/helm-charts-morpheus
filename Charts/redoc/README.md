@@ -16,9 +16,9 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install redoc --set replicaCount="1" morpheusdata/redoc
 ```
-Or supply a values YAML file and pass as an agrgument as follows:
+Or supply a Values YAML file and pass as an agrgument as follows:
 ```console
-helm install -f values.yaml redoc morpheusdata/redoc
+helm install -f Values.yaml redoc morpheusdata/redoc
 ```
 
 ---
@@ -28,7 +28,7 @@ There are no persistent items associated at this time.  Upgrading is simpling re
 
 ```console
 helm repo update
-helm upgrade -f values.yaml redoc morpheusdata/redoc
+helm upgrade -f Values.yaml redoc morpheusdata/redoc
 ```
 
 ## Uninstalling Redoc Chart
@@ -46,12 +46,12 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following tables lists the configurable parameters of the Sentry chart and their default values.
+The following tables lists the configurable parameters of the Sentry chart and their default Values.
 
 | Parameter                                   | Description                                                                                  | Default                                        |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | `image.repository`                            | Image repository                                  | `morpheusdata/redoc`|
-| `image.tag`                                   | Image tag. Possible values listed [here](https://hub.docker.com/r/redocly/redoc/tags). | `v2.0.0-rc.74`|
+| `image.tag`                                   | Image tag. Possible Values listed [here](https://hub.docker.com/r/redocly/redoc/tags). | `v2.0.0-rc.74`|
 | `image.pullPolicy`                            | Image pull policy | `IfNotPresent`                |                           |
 | `redoc.PAGE_TITLE`                            | Page Title                                        |  `<Optional>`             |
 | `redoc.PAGE_FAVICON`                          | URL to page favicon                               |  `<Optional>`             |
