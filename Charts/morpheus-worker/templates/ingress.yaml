@@ -19,6 +19,7 @@ metadata:
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
+    nginx.org/websocket-services: {{ include "morpheus-worker.name" . }}
 spec:
   {{- if .Values.ingress.tls }}
   tls:

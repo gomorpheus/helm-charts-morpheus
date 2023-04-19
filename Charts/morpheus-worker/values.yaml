@@ -41,7 +41,6 @@ ingress:
     nginx.ingress.kubernetes.io/x-forwarded-proto: "https"
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/affinity-mode: "persistent"
-    nginx.org/websocket-services: "morpheus-worker"
   hosts:
     - host: chart-example.local
   path: /
