@@ -3,6 +3,25 @@ entries:
   morpheus-worker:
   - apiVersion: v2
     appVersion: 5.4.3
+    created: "2023-04-19T07:40:21.58323752-04:00"
+    description: Deploy Morpheus VDI and Distributed Workers (https://www.morpheusdata.com)
+    digest: 26d43fd6de383a7124d9d6c2eb0bb70a6469444a25f58c947da2b7ba8b0f7852
+    icon: https://morpheusdata.com/wp-content/uploads/2020/04/morpheus-logo-v2.svg
+    keywords:
+    - morpheus
+    - worker
+    - gateway
+    - cmp
+    - vdi
+    - distributed
+    - console
+    kubeVersion: '>=1.16.0-0'
+    name: morpheus-worker
+    urls:
+    - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/morpheus-worker-1.4.1/morpheus-worker-1.4.1.tgz
+    version: 1.4.1
+  - apiVersion: v2
+    appVersion: 5.4.3
     created: "2023-04-18T08:29:52.651715569-04:00"
     description: Deploy Morpheus VDI and Distributed Workers (https://www.morpheusdata.com)
     digest: 38e4eb5681e23f613d75e4b1977d61eb5d1586fc553c19e64e60664ad1e6476a
@@ -120,4 +139,4 @@ entries:
     urls:
     - https://github.com/gomorpheus/helm-charts-morpheus/releases/download/redoc-1.0.0/redoc-1.0.0.tgz
     version: 1.0.0
-generated: "2023-04-18T08:29:52.648852889-04:00"
+generated: "2023-04-19T07:40:21.582065452-04:00"
